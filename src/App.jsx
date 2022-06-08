@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import styles from './App.module.css';
+import Hello from './components/Hello'
 
 function App() {
 
@@ -26,6 +26,12 @@ function App() {
           <h3>My name is {name}</h3>
           {element}
         </>
+      </div>
+
+      {/* Components */}
+      <div className={styles.box3}>
+        <h1>Components</h1>
+        <Hello/>
       </div>
 
     </div>
