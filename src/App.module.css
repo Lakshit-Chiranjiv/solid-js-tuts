@@ -2,3 +2,14 @@
   text-align: left;
   padding: 40px;
 }
+
+.heading{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.staticTxt{
+  background-color: #96bbfe;
+  border-radius: 10px;
+  padding: 20px;
+}
