@@ -4,7 +4,7 @@ import styles from './App.module.css';
 function App() {
   return (
     <div class={styles.App}>
-      
+      <h1>Hello Solid JS</h1>
     </div>
   );
 }
