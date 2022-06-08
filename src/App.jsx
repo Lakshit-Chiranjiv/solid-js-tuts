@@ -12,9 +12,11 @@ function App() {
   </ul>)
 
   const [greet,setGreet] = createSignal('Good Morning');
+  const [rating,setRating] = createSignal(100);
 
   setTimeout(()=>{
     setGreet("Good Night")
+    setRating((prev) => prev+100)
   },5000)
 
   return (
@@ -45,6 +47,7 @@ function App() {
       <div className={styles.box4}>
         <h1>Signals</h1>
         <h3>{greet}</h3>
+        <h3>{rating}</h3>
       </div>
 
     </div>
