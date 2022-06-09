@@ -14,7 +14,7 @@ code {
 
 
 button{
-  width: 260px;
+  min-width: 260px;
   color: white;
   background-color: #5974f7;
   border-radius: 6px;
