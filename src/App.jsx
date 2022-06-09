@@ -1,6 +1,6 @@
 import styles from './App.module.css';
 import Hello from './components/Hello'
-import { createSignal } from "solid-js";
+import { createSignal,createEffect } from "solid-js";
 
 function App() {
 
@@ -13,11 +13,16 @@ function App() {
 
   const [greet,setGreet] = createSignal('Good Morning');
   const [rating,setRating] = createSignal(100);
+  const [number,setNumber] = createSignal(10);
 
   setTimeout(()=>{
     setGreet("Good Night")
     setRating((prev) => prev+100)
   },5000)
+
+  createEffect(() => {
+    console.log("The number is now", number());
+  });
 
   return (
     <div className={styles.App}>
@@ -46,8 +51,15 @@ function App() {
       {/* Signals */}
       <div className={styles.box4}>
         <h1>Signals</h1>
-        <h3>{greet}</h3>
-        <h3>{rating}</h3>
+        <h3>{greet()}</h3>
+        <h3>{rating()}</h3>
+      </div>
+
+      {/* Effects */}
+      <div className={styles.box5}>
+        <h1>Effects</h1>
+        <h3>number = {number()}</h3>
+        <button onClick={()=> number()===10?setNumber(20):setNumber(10)}>Change number</button>
       </div>
 
     </div>
