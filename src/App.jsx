@@ -11,9 +11,15 @@ function App() {
     <li>Three</li>
   </ul>)
 
+  const names = ["George", "Tim", "May", "Kyle", "Hannah"]
+  let i=0;
+
   const [greet,setGreet] = createSignal('Good Morning');
   const [rating,setRating] = createSignal(100);
   const [number,setNumber] = createSignal(10);
+  const [peopleName,setPeopleName] = createSignal(names[i]);
+
+  const greetPeople = () => "Hello "+peopleName();
 
   setTimeout(()=>{
     setGreet("Good Night")
@@ -62,6 +68,15 @@ function App() {
         <button onClick={()=> number()===10?setNumber(20):setNumber(10)}>Change number</button>
       </div>
 
+      {/* Derived Signals */}
+      <div className={styles.box1}>
+        <h1>Derived Signals</h1>
+        <h3>Greeting : {greetPeople()}</h3>
+        <button onClick={()=>{
+          i++;
+          setPeopleName(names[i%names.length])
+        }}>Greet Next Person</button>
+      </div>
     </div>
   );
 }
